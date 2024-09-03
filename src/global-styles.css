@@ -1,0 +1,16 @@
+.btn-custom {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    line-height: 1.0;
+  }
+  
+  .btn-custom:hover {
+    background-color: black;
+    color: white;
+  }
+  
