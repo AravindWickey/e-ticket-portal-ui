@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import ManageMovies from './ManageMovies';
+import { useNavigate } from 'react-router-dom';
+
 
 function Contect() {
+    const navigate = useNavigate();
+
+    const [auth, setAuth] = React.useState(!!localStorage.getItem('token'));
     const [movies, setMovies] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -39,7 +44,7 @@ function Contect() {
     };
 
     const filteredMovies = selectedCategory
-        ? movies.filter(movie => movie.category === selectedCategory)
+        ? movies.filter(movie => movie.category == selectedCategory)
         : movies;
 
     return (
@@ -67,10 +72,14 @@ function Contect() {
                                         <div className="card-body">
                                             <h5 className="card-title">{movie.name}</h5>
                                             <p className="card-text">{movie.description}</p>
-                                            <a href="#" className="btn btn-primary" onClick={() => {
-                                                setSelectedMovie(movie);
-                                                setShowModal(true);
-                                            }}>Edit Movie</a>
+                                            {auth ? (
+                                                <a href="#" className="btn btn-primary" onClick={() => {
+                                                    setSelectedMovie(movie);
+                                                    setShowModal(true);
+                                                }}>Edit Movie</a>
+                                            ) : (
+                                                <button className="btn btn-primary" onClick={() => navigate('/buyticket')}>Buy Ticket</button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

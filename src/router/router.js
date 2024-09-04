@@ -8,7 +8,7 @@ const Register = lazy(()=>import('../admin/Register'));
 const Contact = lazy(()=>import('../home/Contact'));
 const ViewMovies = lazy(()=>import('../home/ViewMovies'));
 const ManageMovies = lazy(()=>import('../home/ManageMovies'));
-
+const BuyTicket = lazy(()=>import('../home/BuyTicket'));
 function AppRouter() {
     return (
         <Router>
@@ -19,6 +19,7 @@ function AppRouter() {
                 <Route path="/contact" element={<Contact/>} />
                 <Route path="/viewMovies" element={<ViewMovies />} />
                 <Route path="/ManageMovies" element={<ManageMovies />} />
+                <Route path="/buyticket" element={<BuyTicket />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

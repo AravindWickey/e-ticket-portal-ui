@@ -60,7 +60,6 @@ function ViewMovies({ movie, onClose, onUpdate }) {
       setFile(null);
       setCategory('');
 
-      // Optionally, you can also reset the file input
       document.getElementById('formFileSm').value = '';
       navigate('/viewMovies');
     } catch (error) {
