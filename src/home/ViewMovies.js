@@ -73,12 +73,12 @@ function Contect() {
                                             <h5 className="card-title">{movie.name}</h5>
                                             <p className="card-text">{movie.description}</p>
                                             {auth ? (
-                                                <a href="#" className="btn btn-primary" onClick={() => {
+                                                <a href="#" class="btn btn-custom" onClick={() => {
                                                     setSelectedMovie(movie);
                                                     setShowModal(true);
                                                 }}>Edit Movie</a>
                                             ) : (
-                                                <button className="btn btn-primary" onClick={() => navigate('/buyticket')}>Buy Ticket</button>
+                                                <button class="btn btn-custom" onClick={() => navigate('/buyticket')}>Buy Ticket</button>
                                             )}
                                         </div>
                                     </div>
