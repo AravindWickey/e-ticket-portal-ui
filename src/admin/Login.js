@@ -7,13 +7,7 @@ import * as Yup from 'yup';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
-  password: Yup.string()
-  .min(6, 'Password must be at least 6 characters')
-  .matches(
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-    'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
-  )
-  .required('Password is required'),
+  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
 
@@ -35,6 +29,7 @@ function Login() {
       alert('Login successful!');
       navigate('/about');
     } catch (error) {
+      alert('Login Failed!');
       if (error instanceof Yup.ValidationError) {
         const newErrors = {};
         error.inner.forEach((err) => {
