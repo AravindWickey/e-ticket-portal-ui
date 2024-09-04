@@ -1,5 +1,7 @@
 import React from 'react';
-import banner1 from "../asset/BannerNMS.jpg";
+import banner1 from "../asset/ban1.jpg";
+import banner2 from "../asset/ban2.jpg";
+
 
 function About() {
   return (
@@ -14,22 +16,11 @@ function About() {
           <div class="carousel-item active">
             <img src={banner1} class="d-block w-100" alt="..." />
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={banner1} class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src={banner1} class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+            <img src={banner2} class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block"> 
             </div>
           </div>
         </div>
@@ -42,7 +33,16 @@ function About() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <h1>About</h1>
+      <h1>About Us</h1>
+      <div className="container mt-4">
+  <div className="card border-0" style={{ borderRadius: 0 }}>
+    <div className="card-body">
+      <p className="card-text">
+        Established in 2021 in Pune, India, NMS Cinemas is a chain of single-screen theatres that offers a wide variety of movie genres and languages at affordable prices. With the rise of online ticket booking platforms like BookMyShow and Paytm, the company observed a decline in sales. To adapt to this changing market, NMS Cinemas has embarked on developing its own online ticket booking web application, designed to provide a seamless and user-friendly experience for moviegoers.
+      </p>
+    </div>
+  </div>
+</div>
     </div>
   );
 }

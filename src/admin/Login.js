@@ -19,7 +19,7 @@ function Login() {
       console.log(response.data,"LoginPage data");
       localStorage.setItem('token', response.data.access_token);
       alert('Login successful!');
-      navigate('/');
+      navigate('/about');
     } catch (error) {
       console.error('There was an error logging in!', error);
     }

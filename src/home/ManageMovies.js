@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './All.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function ViewMovies({ movie, onClose, onUpdate }) {
-  const [id, setId] = useState(movie ? movie.id : '');
+  const navigate = useNavigate();
+
+  const [id, setId] = useState(movie ? parseInt(movie.id, 10) : '');
   const [name, setName] = useState(movie ? movie.name : '');
   const [duration, setDuration] = useState(movie ? movie.duration : '');
   const [description, setDescription] = useState(movie ? movie.description : '');
@@ -33,7 +37,7 @@ function ViewMovies({ movie, onClose, onUpdate }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('id', id);
+    // formData.append('id', id);
     formData.append('name', name);
     formData.append('duration', duration);
     formData.append('description', description);
@@ -58,6 +62,7 @@ function ViewMovies({ movie, onClose, onUpdate }) {
 
       // Optionally, you can also reset the file input
       document.getElementById('formFileSm').value = '';
+      navigate('/viewMovies');
     } catch (error) {
       console.error('Error adding movie:', error);
     }

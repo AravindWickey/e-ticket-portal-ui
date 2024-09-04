@@ -89,9 +89,7 @@ function Home() {
                   horizontal: 'right',
                 }}
                 open={Boolean(anchorEl)}
-                onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>LOGOUT</MenuItem>
               </Menu>
             </div>
